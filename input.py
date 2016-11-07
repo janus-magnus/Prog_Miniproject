@@ -21,6 +21,7 @@ class loginFrame(Frame):
 
     def submit(self):
         text = Frame.input_textbox.get('1.0',END)
+        #hij telt enters en alle andere tekens ook gewoon mee nog.
         if len(text) < 4:
             popMessage("Tweet moet minimaal 4 tekens lang zijn!.")
         elif len(text) < 140:
