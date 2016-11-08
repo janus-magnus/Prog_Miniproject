@@ -1,7 +1,6 @@
-import tkinter as tk
 from tkinter import *
-from tkinter import ttk
 from pathlib import Path
+from defenitions import popMessage
 
 file = Path('tweet_que.txt')
 
@@ -28,10 +27,9 @@ class inputFrame(Frame):
         elif len(text) < 140:
             if not file.is_file() :
                 tweetFile = open('Tweet_que.txt', 'w')
-                print('hit')
             else:
                 tweetFile = open('Tweet_que.txt', 'a')
-
+            text = text + "||"
             tweetFile.write(text)
             popMessage("Tweet is verzonden en wacht op goedkeuring.")
             tweetFile.close()
@@ -40,16 +38,6 @@ class inputFrame(Frame):
 
         Frame.input_textbox.delete(1.0, END)  # werkt niet geen idee waarom
         lfTk.update()
-
-
-def popMessage(msg):
-    popup = tk.Tk()
-    popup.wm_title("Tweet info")
-    label = ttk.Label(popup, text=msg)
-    label.pack()
-    button = ttk.Button(popup, text="Ok!", command = popup.destroy)
-    button.pack()
-    popup.mainloop()
 
 lfTk = Tk()
 lfTk.title('NS Tweetbot')
