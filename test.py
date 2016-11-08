@@ -6,18 +6,23 @@ import time
 display_text = ''
 
 class screenFrame(Frame):
-
     def __init__(self, master=None):
         Frame.__init__(self, master)
-        global display_label
-        Frame.display_label = Label(text='test')
-        Frame.display_label.pack()
-        Frame.testb = Button(text='test')
-        Frame.testb.pack()
-        self.pack()
 
-    def test(self):
-        Frame.di
+        Frame.approveB = Button( text='Approve', command=self.approve)
+        Frame.display_label = Label()
+
+
+        Frame.display_label['text'] = 'test'
+        Frame.display_label.grid(row=0, column=0)
+        Frame.approveB.grid(row=0, column=1)
+
+
+
+
+    def approve(self):
+        Frame.display_label['text'] = 'ttesfrdhest'
+
 
 
 
