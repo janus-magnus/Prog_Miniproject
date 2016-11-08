@@ -1,5 +1,6 @@
 Iedereen moet zijn eigen LOG maken! niet vergeten, moet wel ingeleverd worden.
 
+<<<<<<< HEAD
 - Scherm die de laatste X tweets laat zien met auto-update functie
 -werkende weer API
 -Auto-switch tussen Laatse tweet en weer API
@@ -10,3 +11,15 @@ Iedereen moet zijn eigen LOG maken! niet vergeten, moet wel ingeleverd worden.
 -verwijderen van minor error's en bugs (e.g. wat er gebeurt als je input afsluit)
 -documentatie(bv PSD, schermontwerpen)
 -inputfield leegmaken na submit
+=======
+- Scherm die de laatste X tweets laat zien
+
+- Readme moet in komen te staan wat de leraar moet doen om alles te laten werken
+
+- Weerbericht als er na X tijd geen tweets zijn geplaatst
+
+- Wanneer een gebruiker zijn tweet heeft verzonden moet het scherm "klaar staan" voor de volgende gebruiker.
+Dus eigenlijk gewoon het scherm weer leegmaken.
+
+- Alle schermen moeten er "goed" uitzien
+>>>>>>> origin/master
