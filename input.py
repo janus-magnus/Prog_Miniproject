@@ -3,15 +3,16 @@ from tkinter import *
 from tkinter import ttk
 from pathlib import Path
 
-file = Path('tweetQue.txt')
+file = Path('tweet_que.txt')
 
 
-class loginFrame(Frame):
+class inputFrame(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
 
-        Frame.submitB = Button(self, text='Submit', command=self.submit)
         Frame.input_textbox = Text(self, width=50, height=25)
+        Frame.submitB = Button(self, text='Submit', command=self.submit)
+
 
         Frame.input_textbox.grid(row=0,column=0)
         Frame.submitB.grid(row=1, column=1)
@@ -26,15 +27,19 @@ class loginFrame(Frame):
             popMessage("Tweet moet minimaal 4 tekens lang zijn!.")
         elif len(text) < 140:
             if not file.is_file() :
-                tweetFile = open('TweetQue.txt', 'w')
+                tweetFile = open('Tweet_que.txt', 'w')
+                print('hit')
             else:
-                tweetFile = open('TweetQue.txt', 'a')
+                tweetFile = open('Tweet_que.txt', 'a')
 
             tweetFile.write(text)
             popMessage("Tweet is verzonden en wacht op goedkeuring.")
             tweetFile.close()
         else:
             popMessage("Tweet mag maximaal 140 karakters bevatten!.")
+
+        Frame.input_textbox.delete(1.0, END)  # werkt niet geen idee waarom
+        lfTk.update()
 
 
 def popMessage(msg):
@@ -49,5 +54,5 @@ def popMessage(msg):
 lfTk = Tk()
 lfTk.title('NS Tweetbot')
 lfTk.geometry('500x500')
-lf = loginFrame(lfTk)
+lf = inputFrame(lfTk)
 lf.mainloop()
