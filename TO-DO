@@ -1,3 +1,12 @@
 Iedereen moet zijn eigen LOG maken! niet vergeten, moet wel ingeleverd worden.
 
-- Scherm die de laatste X tweets laat zien
+- Scherm die de laatste X tweets laat zien met auto-update functie
+-werkende weer API
+-Auto-switch tussen Laatse tweet en weer API
+-Layout/beter uiterlijk van GUI
+-code opschonen
+-comments toevoegen
+-eventuele test rapporten
+-verwijderen van minor error's en bugs (e.g. wat er gebeurt als je input afsluit)
+-documentatie(bv PSD, schermontwerpen)
+-inputfield leegmaken na submit
