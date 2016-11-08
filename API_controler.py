@@ -1,5 +1,7 @@
 from twython import Twython
 from pyowm import *
+from django.core.cache import cache
+
 # Twittwer API Stuff
 T_API_key = 'r44TpHBZ5ycKGiaSKDGkcBDEP'  # Twitter App API key
 T_API_key_secret = 'r8oMp8hPdtZsezXKYvwgH4Xf5XD2MneflJzpJfiBsQAz9rQNXc' # secret key moet eigenlijk niet leesbaar zijn hier
@@ -20,6 +22,9 @@ def weather():
     print(testw)
     # werkt niet
 
-
-print(owm.get_API_key())
+def get_latest_tweet():
+    testline = T.get_user_timeline()
+    #return testline[0]
+    return testline[0]['text']
+    #print(testline[0][5])
 
