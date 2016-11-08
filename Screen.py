@@ -24,7 +24,8 @@ class screenFrame(Frame):
             time.sleep(60) # 10 min
 
     def update_tweet(self):
-        Frame.display_label['text'] = API_controler.get_latest_tweet()
+        text_to_set = API_controler.get_latest_tweet()
+        Frame.display_label['text'] =text_to_set
 
 
 
