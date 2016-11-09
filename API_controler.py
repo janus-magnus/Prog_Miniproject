@@ -22,9 +22,8 @@ def weather():
     print(testw)
     # werkt niet
 
-def get_latest_tweet():
-    testline = T.get_user_timeline()
-    #return testline[0]
-    return testline[0]['text']
-    #print(testline[0][5])
+def get_latest_tweets():
+    timeline = T.get_user_timeline()
+
+    return timeline
 
