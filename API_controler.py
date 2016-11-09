@@ -20,13 +20,8 @@ def place_tweet(status):
 def weather():
     owm = owmAPI.weather_at_place('Utrecht,NL')
     weather_ob = owm.get_weather()
-    clouds = weather_ob.get_clouds()  # Get cloud coverage
-    rain = weather_ob.get_rain()  # Get rain volume
-    wind = weather_ob.get_wind()  # Get wind degree and speed
-    humidity = weather_ob.get_humidity()  # Get humidity percentage
-    prs = weather_ob.get_pressure()  # Get atmospheric pressure
-    temp = weather_ob.get_temperature(unit='celsius')
-    status = weather_ob.get_detailed_status()  # Get detailed weather status
+
+    return weather_ob
 
 def get_latest_tweets():
     timeline = T.get_user_timeline()

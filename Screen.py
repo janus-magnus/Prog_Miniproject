@@ -17,7 +17,7 @@ class ScreenFrame():
         self.display_label_3.pack()
         self.display_label_4.pack()
         self.display_label_5.pack()
-
+        self.get_weather()
         self.update_tweets()
         self.root.mainloop()
 
@@ -42,5 +42,20 @@ class ScreenFrame():
             tweet_counter += 1
             print('here here')
         self.root.after(600000, self.update_tweets)  # 10 min in milised
+
+
+    def get_weather(self):  # placeholder moet uitgebreid worden met auto update etc.
+        weather_ob = API_controler.weather()  # weer object
+
+       # dit zijn de functies die op de het weather_ob kan uitvoeren
+
+       # clouds = weather_ob.get_clouds()  # Get cloud coverage
+       # rain = weather_ob.get_rain()  # Get rain volume
+       # wind = weather_ob.get_wind()  # Get wind degree and speed/ in een dict
+       # humidity = weather_ob.get_humidity()  # Get humidity percentage
+        temp = weather_ob.get_temperature(unit='celsius')
+       # status = weather_ob.get_detailed_status()  # Get detailed weather status
+
+        print(temp)  # voorbeeld
 
 sf = ScreenFrame()
