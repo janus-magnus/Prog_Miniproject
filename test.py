@@ -1,36 +1,20 @@
-from tkinter import *
-import API_controler
-import threading
+import tkinter as tk
 import time
 
-display_text = ''
+class App():
+    def __init__(self):
+        self.root = tk.Tk()
+        self.label = tk.Label(text="")
+        self.label.pack()
+        self.update_clock()
+        print('1')
+        self.root.mainloop()
+        print('3')
 
-class screenFrame(Frame):
-    def __init__(self, master=None):
-        Frame.__init__(self, master)
+    def update_clock(self):
+        print('2')
+        now = time.strftime("%H:%M:%S")
+        self.label.configure(text=now)
+        self.root.after(1000, self.update_clock)
 
-        Frame.approveB = Button( text='Approve', command=self.approve)
-        Frame.display_label = Label()
-
-
-        Frame.display_label['text'] = 'test'
-        Frame.display_label.grid(row=0, column=0)
-        Frame.approveB.grid(row=0, column=1)
-
-
-
-
-    def approve(self):
-        Frame.display_label['text'] = 'ttesfrdhest'
-
-
-
-
-
-sfTk = Tk()
-sfTk.title('NS Tweetbot Screen')
-sfTk.geometry('500x500')
-sf = screenFrame(sfTk)
-sf.mainloop()
-
-
+app=App()
