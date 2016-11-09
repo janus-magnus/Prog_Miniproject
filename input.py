@@ -1,20 +1,21 @@
-from tkinter import *
+import tkinter as tk
 from pathlib import Path
 from defenitions import popMessage
 
 file = Path('tweet_que.txt')
 
-class inputFrame(Frame):
+class InputApp(tk.Frame):
     def __init__(self, master=None):
-        Frame.__init__(self, master)
-        Frame.input_textbox = Text(self, width=50, height=25)
-        Frame.submitB = Button(self, text='Submit', command=self.submit)
-        Frame.input_textbox.grid(row=0,column=0)
-        Frame.submitB.grid(row=1, column=1)
+        tk.Frame.__init__(self, master)
+        self.master = master
+        self.input_textbox = tk.Text(self, width=50, height=25)
+        self.submitB = tk.Button(self, text='Submit', command=self.submit)
+        self.input_textbox.grid(row=0,column=0)
+        self.submitB.grid(row=1, column=1)
         self.pack()
 
     def submit(self):
-        text = Frame.input_textbox.get('1.0',END)
+        text = self.input_textbox.get('1.0',tk.END)
         #hij telt enters en alle andere tekens ook gewoon mee nog.
         if len(text) < 4:
             popMessage("Tweet moet minimaal 4 tekens lang zijn!.")
@@ -25,15 +26,18 @@ class inputFrame(Frame):
                 tweetFile = open('Tweet_que.txt', 'a')
             text = text + "||"
             tweetFile.write(text)
-            popMessage("Tweet is verzonden en wacht op goedkeuring.")
             tweetFile.close()
+            self.input_textbox.delete('1.0', tk.END)  # werkt niet geen idee waarom
+            self.update()
+            popMessage("Tweet is verzonden en wacht op goedkeuring.")
         else:
             popMessage("Tweet mag maximaal 140 karakters bevatten!.")
-        Frame.input_textbox.delete(1.0, END)  # werkt niet geen idee waarom
-        lfTk.update()
 
-lfTk = Tk()
-lfTk.title('NS Tweetbot')
-lfTk.geometry('500x500')
-lf = inputFrame(lfTk)
-lf.mainloop()
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    InputApp(root).pack
+    root.title('NS Tweetbot Input')
+    root.geometry('500x500')
+    root.mainloop()
+
