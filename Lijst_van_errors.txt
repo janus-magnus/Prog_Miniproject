@@ -1,0 +1,7 @@
+bij het afsluiten van input. word een _tkinter.TclError: invalid command name ".31195312.31195248" gegeven
+reden: het programa probeert een command te berijken in de widget(wat er in de GUI staat) naadat de widget terminated is
+waar gaat het fout: geen idee
+
+als er geen tweets meer zijn wordt er bij zowel het rejecten en accepten van tweets een IndexError gegeven, verder geen invloed op werking van het programma
+reden: geen guard tegen het uitvoeren bij lege tweet_list
+waar:
