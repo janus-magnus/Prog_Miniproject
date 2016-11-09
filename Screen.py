@@ -41,6 +41,6 @@ class ScreenFrame():
                 break
             tweet_counter += 1
             print('here here')
-        self.root.after(60000, self.update_tweets)
+        self.root.after(600000, self.update_tweets)  # 10 min in milised
 
 sf = ScreenFrame()
