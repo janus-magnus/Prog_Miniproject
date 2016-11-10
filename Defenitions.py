@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 def popMessage(msg):
+    '''maakt een popup window aan'''
     popup = tk.Tk()
     popup.wm_title("Tweet info")
     label = ttk.Label(popup, text=msg)

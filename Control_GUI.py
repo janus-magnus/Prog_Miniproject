@@ -1,6 +1,6 @@
 import tkinter as tk
 from pathlib import Path
-import API_Controler
+from API_Controler import place_tweet
 import csv
 import datetime
 from Defenitions import popMessage
@@ -9,6 +9,7 @@ reject_file = Path('rejected_tweets.csv')
 tweet_que_file = Path('tweet_que.txt')
 
 def read_in():
+    '''haalt de gegevens uit tweet_que.txt en slaat ze op in een list'''
     try:
         with open('tweet_que.txt', 'r') as twt_que:
             global tweet_list
@@ -38,10 +39,11 @@ class ControlApp(tk.Frame):
         self.pack()
 
     def approve(self):
+        '''plaats de goedgekeurde tweet via place_tweet() en plaats de volgende tweet in het venster'''
         global tweet_list
         try:
             if tweet_list[0] is not None:
-                API_Controler.place_tweet(tweet_list[0])  # hier wordt de tweet geplaatst
+                place_tweet(tweet_list[0])  # hier wordt de tweet geplaatst
                 tweet_list.remove(tweet_list[0]) #haal de tweet uit de lijst
                 self.update_que()
                 self.control_textbox.configure(state='normal')
@@ -56,6 +58,7 @@ class ControlApp(tk.Frame):
 
 
     def reject(self):
+        '''logs de afgekeurde tweet in rejected_tweets.csv en plaats de volgende tweet in het venster'''
         global tweet_list
         try:
             if not reject_file.is_file():
@@ -84,6 +87,7 @@ class ControlApp(tk.Frame):
     def update_que(self):
         with open('tweet_que.txt','w') as twtq:
             for i in tweet_list:
+
                 if i != "":
                     write_line = i + '\n'
                     twtq.write(write_line)
