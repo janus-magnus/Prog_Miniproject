@@ -1,5 +1,5 @@
 from tkinter import *
-import API_controler
+import API_Controler
 from datetime import datetime
 
 last_tweet = ""
@@ -23,7 +23,7 @@ class ScreenFrame():
     def update_tweets(self): #zet de laatste 5 tweets in het scherm
         global last_tweet, show_weather
         #roep de API aan
-        timeline = API_controler.get_latest_tweets()
+        timeline = API_Controler.get_latest_tweets()
 
         tweet_counter = 1
         for tweet in timeline:
@@ -57,7 +57,7 @@ class ScreenFrame():
             self.weather_label.grid_remove()
 
     def get_weather(self):#Zet het weer op het scherm
-        weather_ob = API_controler.weather() #roep het weer API aan
+        weather_ob = API_Controler.weather() #roep het weer API aan
 
        # dit zijn de functies die op de het weather_ob kan uitvoeren
         wind = weather_ob.get_wind()  # Get wind degree and speed/ in een dict

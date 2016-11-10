@@ -1,11 +1,11 @@
 import tkinter as tk
 from pathlib import Path
-import API_controler
+import API_Controler
 import csv
 import datetime
-from defenitions import popMessage
+from Defenitions import popMessage
 
-reject_file = Path('rejectedTweets.csv')
+reject_file = Path('rejected_tweets.csv')
 tweet_que_file = Path('tweet_que.txt')
 
 def read_in():
@@ -35,16 +35,13 @@ class ControlApp(tk.Frame):
         self.control_textbox.grid(row=0, column=0)
         self.approveB.grid(row=2, column=1)
         self.rejectB.grid(row=2, column=2)
-
-
         self.pack()
 
     def approve(self):
         global tweet_list
         try:
             if tweet_list[0] is not None:
-                API_controler.place_tweet(tweet_list[0])  # hier wordt de tweet geplaatst
-
+                API_Controler.place_tweet(tweet_list[0])  # hier wordt de tweet geplaatst
                 tweet_list.remove(tweet_list[0]) #haal de tweet uit de lijst
                 self.update_que()
                 self.control_textbox.configure(state='normal')
@@ -62,10 +59,10 @@ class ControlApp(tk.Frame):
         global tweet_list
         try:
             if not reject_file.is_file():
-                rejects = open('rejectedTweets.csv', 'w')
+                rejects = open('rejected_tweets.csv', 'w')
                 reject_writer = csv.writer(rejects, delimiter=';')
             else:
-                rejects = open('rejectedTweets.csv', 'a')
+                rejects = open('rejected_tweets.csv', 'a')
                 reject_writer = csv.writer(rejects, delimiter=';')
 
             tweet_to_reject = repr(tweet_list[0])
@@ -73,7 +70,6 @@ class ControlApp(tk.Frame):
             log_time = datetime.datetime.now()
             reject_log = [tweet_to_reject,log_time]
             reject_writer.writerow(reject_log)
-
             tweet_list.remove(tweet_list[0])
             self.update_que()
             self.control_textbox.configure(state='normal')
@@ -91,7 +87,6 @@ class ControlApp(tk.Frame):
                 if i != "":
                     write_line = i + '\n'
                     twtq.write(write_line)
-
 
 if __name__ == '__main__':
     read_in()
