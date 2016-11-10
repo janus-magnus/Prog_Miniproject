@@ -50,8 +50,8 @@ class ScreenFrame():
             tweet_counter += 1
 
         #update het scherm elke 10minuten(tijd staat in miliseconden)
-        self.root.after(600000, self.delete_tweets) #delete eerst de tweets
-        self.root.after(600000, self.update_tweets) #zet dan de nieuwe tweets er weer in
+        self.root.after(5000, self.delete_tweets) #delete eerst de tweets
+        self.root.after(5000, self.update_tweets) #zet dan de nieuwe tweets er weer in
 
     def delete_tweets(self):
         self.display_label.grid_remove()
@@ -72,14 +72,10 @@ class ScreenFrame():
 
         #Voeg de labels van het weerbericht toe met de info.
         self.weather_label = Label(text="Het weer in Utrecht\n"+text_date, fg='#163c76',bg='#EEEEEE',
-                                       width=44, height=4,bd=1, font=('normal', '14'))
-        self.weather_label.grid(row=5)
+                                       bd=1, font=('normal', '14'))
+        self.weather_label.grid(row=4, columnspan=2, sticky=E+W+N+S)
 
-        self.weather_label = Label(text=status+"\nLuchtvochtigheid: "+str(humidity)+"%"
-                                            ,anchor="n",fg='#163c76',bg='#EEEEEE',width=27, height=5, bd=1, font=('normal', '13'))
-        self.weather_label.grid(row=6, sticky=W)
-        self.weather_label = Label(text="Temperatuur: "+str(temp['temp'])+"°C\nWindsnelheid: "+str(wind['speed'])+"km/u"
-                                            ,anchor="n",fg='#163c76',bg='#EEEEEE',width=27, height=5, bd=1, font=('normal', '13'))
-        self.weather_label.grid(row=6, sticky=E)
-
+        self.weather_label = Label(text=status+"\t\t\tLuchtvochtigheid: "+str(humidity)+"%\nTemperatuur: "+str(temp['temp'])+"°C\tWindsnelheid: "+str(wind['speed'])+"km/u"
+                                   ,anchor='n',fg='#163c76',bg='#EEEEEE',bd=1, font=('normal', '13'))
+        self.weather_label.grid(row=5, columnspan=2, sticky=E+W+N+S)
 sf = ScreenFrame()
