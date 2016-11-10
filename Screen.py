@@ -8,13 +8,14 @@ show_weather = 0
 class ScreenFrame():
     def __init__(self):
         self.root = Tk()
-        self.root.geometry('490x510')
+        self.root.geometry('510x510')
         self.root.title('NS Tweetbot Screen')
-
+        self.root.columnconfigure(0, weight=3)
+        self.root.rowconfigure(0,minsize=40,weight=3)
         #Voeg een label aan de bovenkant van het scherm toe.
         self.display_label_top = Label(text='Laatste 5 tweets van andere gebruikers.',
-                                   fg='white',bg='#163c76', width=54, height=2,bd=1, relief=GROOVE, font='bold')
-        self.display_label_top.grid(row=1)
+                                   fg='white',bg='#163c76',bd=1, relief=GROOVE, font='bold')
+        self.display_label_top.grid(row=0,columnspan=2, sticky=W+E+N+S)
 
         self.update_tweets()
 
@@ -42,9 +43,10 @@ class ScreenFrame():
                 break
 
             #zet de tekst van de tweet in de label, en er wordt opmaak toegevoegd aan de label.
-            self.display_label = Label(text=text_to_set,wraplength='430', fg='#163c76',bg='white',
-                                       width=54, height=5,bd=1, relief=GROOVE, font='bold')
-            self.display_label.grid(row=tweet_counter+1)
+            self.root.rowconfigure(tweet_counter,minsize=94,weight=3)
+            self.display_label = Label(text=text_to_set,wraplength='450', fg='#163c76',bg='white',
+                                       bd=1, relief=GROOVE, font='bold')
+            self.display_label.grid(row=tweet_counter,columnspan=2, sticky=W+E+N+S)
             tweet_counter += 1
 
         #update het scherm elke 10minuten(tijd staat in miliseconden)
