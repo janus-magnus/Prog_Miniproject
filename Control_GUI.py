@@ -21,7 +21,7 @@ def read_in():
                 text += line
             tweet_list = text.split("||")
     except FileNotFoundError:
-        print('No tweets yet')
+        popMessage('No tweets yet')
 
 class ControlApp(tk.Frame):
     def __init__(self, master=None):
@@ -58,7 +58,7 @@ class ControlApp(tk.Frame):
                     self.control_textbox.insert(tk.END, tweet_list[0])
                     self.control_textbox.configure(state='disabled')
                     self.update()
-                except te.TwythonError:
+                except te.TwythonError:  # duplicate tweet protectie
                     popMessage('De tweet mag niet gelijk zijn aan de vorige')
 
             else:
