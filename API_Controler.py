@@ -24,4 +24,3 @@ def get_latest_tweets():
     '''haalt de timeline van twitter en return timeline'''
     timeline = T.get_user_timeline()
     return timeline
-

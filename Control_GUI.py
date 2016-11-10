@@ -1,12 +1,14 @@
 import tkinter as tk
 from pathlib import Path
-from API_Controler import place_tweet
+from API_Controler import *
 import csv
 import datetime
 from Defenitions import popMessage
+from twython import exceptions as te
 
 reject_file = Path('rejected_tweets.csv')
 tweet_que_file = Path('tweet_que.txt')
+
 
 def read_in():
     '''haalt de gegevens uit tweet_que.txt en slaat ze op in een list'''
@@ -18,7 +20,6 @@ def read_in():
             for line in twt_que:
                 text += line
             tweet_list = text.split("||")
-            print(tweet_list)
     except FileNotFoundError:
         print('No tweets yet')
 
@@ -45,20 +46,26 @@ class ControlApp(tk.Frame):
     def approve(self):
         '''plaats de goedgekeurde tweet via place_tweet() en plaats de volgende tweet in het venster'''
         global tweet_list
+
         try:
             if tweet_list[0] is not None:
-                place_tweet(tweet_list[0])  # hier wordt de tweet geplaatst
-                tweet_list.remove(tweet_list[0]) #haal de tweet uit de lijst
-                self.update_que()
-                self.control_textbox.configure(state='normal')
-                self.control_textbox.delete(1.0, tk.END)
-                self.control_textbox.insert(tk.END, tweet_list[0])
-                self.control_textbox.configure(state='disabled')
-                self.update()
+                try:
+                    place_tweet(tweet_list[0])  # hier wordt de tweet geplaatst
+                    tweet_list.remove(tweet_list[0]) #haal de tweet uit de lijst
+                    self.update_que()
+                    self.control_textbox.configure(state='normal')
+                    self.control_textbox.delete(1.0, tk.END)
+                    self.control_textbox.insert(tk.END, tweet_list[0])
+                    self.control_textbox.configure(state='disabled')
+                    self.update()
+                except te.TwythonError:
+                    popMessage('De tweet mag niet gelijk zijn aan de vorige')
+
             else:
                 raise IndexError
         except IndexError:
             popMessage("Er zijn geen tweets meer om te controleren.")
+
 
 
     def reject(self):
