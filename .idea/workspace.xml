@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61c1b8e5-9f22-4013-afce-84d47a44a47d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Lijst_van_errors.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TO-DO" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/API_controler.py" afterPath="$PROJECT_DIR$/API_Controler.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tweet_que.txt" afterPath="$PROJECT_DIR$/tweet_que.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/defenitions.py" afterPath="$PROJECT_DIR$/Defenitions.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/input.py" afterPath="$PROJECT_DIR$/Input.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rejectedTweets.csv" afterPath="$PROJECT_DIR$/rejected_tweets.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Control_GUI.py" afterPath="$PROJECT_DIR$/Control_GUI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Screen.py" afterPath="$PROJECT_DIR$/Screen.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/API_controler.py" afterPath="$PROJECT_DIR$/API_controler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.py" afterPath="$PROJECT_DIR$/input.py" />
     </list>
     <ignored path="Prog_Miniproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +22,7 @@
     <SUITE FILE_PATH="coverage/Prog_Miniproject$Unittests_in_setup.coverage" NAME="Unittests in setup Coverage Results" MODIFIED="1478547209409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/twython" />
     <SUITE FILE_PATH="coverage/Prog_Miniproject$Input.coverage" NAME="Input Coverage Results" MODIFIED="1478767242814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prog_Miniproject$API_controler.coverage" NAME="API_controler Coverage Results" MODIFIED="1478765606067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Prog_Miniproject$Screen.coverage" NAME="Screen Coverage Results" MODIFIED="1478767236489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Prog_Miniproject$Screen.coverage" NAME="Screen Coverage Results" MODIFIED="1478767390993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prog_Miniproject$test.coverage" NAME="test Coverage Results" MODIFIED="1478701622086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Prog_Miniproject$Control_GUI.coverage" NAME="Control_GUI Coverage Results" MODIFIED="1478767247720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -43,7 +35,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="API_Controler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="API_Controler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API_Controler.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
@@ -87,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Screen.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Screen.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Screen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
+            <state relative-caret-position="272">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -123,12 +115,12 @@
         <option value="$PROJECT_DIR$/ControlGUI.py" />
         <option value="$PROJECT_DIR$/input.py" />
         <option value="$PROJECT_DIR$/Lijst_van_errors.txt" />
-        <option value="$PROJECT_DIR$/Screen.py" />
         <option value="$PROJECT_DIR$/APIkeys.ini" />
         <option value="$PROJECT_DIR$/API_Settings.py" />
         <option value="$PROJECT_DIR$/API_controler.py" />
         <option value="$PROJECT_DIR$/Control_GUI.py" />
         <option value="$PROJECT_DIR$/Input.py" />
+        <option value="$PROJECT_DIR$/Screen.py" />
       </list>
     </option>
   </component>
@@ -199,7 +191,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.Control_GUI">
+  <component name="RunManager" selected="Python.Screen">
     <configuration default="false" name="input" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -507,9 +499,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Control_GUI" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Input" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Screen" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Screen" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Control_GUI" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Input" />
         <item index="3" class="java.lang.String" itemvalue="Python.API_controler" />
         <item index="4" class="java.lang.String" itemvalue="Python.input" />
       </list>
@@ -559,7 +551,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31983384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31983384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972437" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -797,14 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Screen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Control_GUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
@@ -846,6 +830,14 @@
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Screen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

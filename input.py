@@ -1,6 +1,6 @@
 import tkinter as tk
 from pathlib import Path
-from defenitions import popMessage
+from Defenitions import popMessage
 
 file = Path('tweet_que.txt')
 
@@ -21,18 +21,17 @@ class InputApp(tk.Frame):
             popMessage("Tweet moet minimaal 4 tekens lang zijn!.")
         elif len(text) < 140:
             if not file.is_file() :
-                tweetFile = open('Tweet_que.txt', 'w')
+                tweetFile = open('tweet_que.txt', 'w')
             else:
-                tweetFile = open('Tweet_que.txt', 'a')
+                tweetFile = open('tweet_que.txt', 'a')
             text = text + "||"
             tweetFile.write(text)
             tweetFile.close()
-            self.input_textbox.delete('1.0', tk.END)  # werkt niet geen idee waarom
+            self.input_textbox.delete('1.0', tk.END)
             self.update()
             popMessage("Tweet is verzonden en wacht op goedkeuring.")
         else:
             popMessage("Tweet mag maximaal 140 karakters bevatten!.")
-
 
 if __name__ == '__main__':
     root = tk.Tk()
