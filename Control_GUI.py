@@ -17,7 +17,6 @@ def read_in():
             text = ""
             for line in twt_que:
                 text += line
-                #tweet_list.append(line.strip())
             tweet_list = text.split("||")
             print(tweet_list)
     except FileNotFoundError:
@@ -28,14 +27,19 @@ class ControlApp(tk.Frame):
         global tweet_list
         tk.Frame.__init__(self, master)
         self.master = master
-        self.approveB = tk.Button(self, text='Approve', command=self.approve)
-        self.rejectB = tk.Button(self,text='Reject', command=self.reject)
-        self.control_textbox = tk.Text(self, width=50, height=25)
+        self.rowconfigure(0,weight=3)
+
+        #maak buttons
+        self.approveB = tk.Button(self, text='Approve', command=self.approve, bg='#0079D3', fg='white')
+        self.rejectB = tk.Button(self,text='Reject', command=self.reject, bg='#0079D3', fg='white')
+        #maak textbox
+        self.control_textbox = tk.Text(self, width=50, height=15)
         self.control_textbox.insert(tk.END, tweet_list[0])
         self.control_textbox.configure(state='disabled')
-        self.control_textbox.grid(row=0, column=0)
-        self.approveB.grid(row=2, column=1)
-        self.rejectB.grid(row=2, column=2)
+        #zet alles in grid
+        self.control_textbox.grid(row=0, columnspan=2, sticky='nesw')
+        self.approveB.grid(row=2, column=0, sticky='nesw')
+        self.rejectB.grid(row=2, column=1, sticky='nesw')
         self.pack()
 
     def approve(self):
@@ -68,11 +72,13 @@ class ControlApp(tk.Frame):
                 rejects = open('rejected_tweets.csv', 'a')
                 reject_writer = csv.writer(rejects, delimiter=';')
 
+            #Zet de rejected tweet in het logfile
             tweet_to_reject = repr(tweet_list[0])
             tweet_to_reject = tweet_to_reject.strip("\'")
             log_time = datetime.datetime.now()
             reject_log = [tweet_to_reject,log_time]
             reject_writer.writerow(reject_log)
+            #verwijder de tweet uit de que
             tweet_list.remove(tweet_list[0])
             self.update_que()
             self.control_textbox.configure(state='normal')
@@ -85,9 +91,9 @@ class ControlApp(tk.Frame):
 
 
     def update_que(self):
+        #update het que bestand
         with open('tweet_que.txt','w') as twtq:
             for i in tweet_list:
-
                 if i != "":
                     write_line = i + '\n'
                     twtq.write(write_line)
@@ -97,5 +103,6 @@ if __name__ == '__main__':
     root = tk.Tk()
     ControlApp(root).pack
     root.title('NS Tweetbot Control')
-    root.geometry('500x500')
+    root.geometry('500x300')
+    root.configure(bg='#FFC917')
     root.mainloop()
