@@ -42,8 +42,8 @@ class ScreenFrame():
                 break
 
             #zet de tekst van de tweet in de label, en er wordt opmaak toegevoegd aan de label.
-            self.display_label = Label(text=text_to_set,wraplength='490', fg='#163c76',bg='white',
-                                       width=54, height=5,bd=1, relief=GROOVE, font=('Arriel','12'))
+            self.display_label = Label(text=text_to_set,wraplength='430', fg='#163c76',bg='white',
+                                       width=54, height=5,bd=1, relief=GROOVE, font='bold')
             self.display_label.grid(row=tweet_counter+1)
             tweet_counter += 1
 
@@ -74,10 +74,10 @@ class ScreenFrame():
         self.weather_label.grid(row=5)
 
         self.weather_label = Label(text=status+"\nLuchtvochtigheid: "+str(humidity)+"%"
-                                            ,anchor="n",fg='#163c76',bg='#EEEEEE',width=27, height=5, bd=1, font=('Arriel', '13'))
+                                            ,anchor="n",fg='#163c76',bg='#EEEEEE',width=27, height=5, bd=1, font=('normal', '13'))
         self.weather_label.grid(row=6, sticky=W)
         self.weather_label = Label(text="Temperatuur: "+str(temp['temp'])+"°C\nWindsnelheid: "+str(wind['speed'])+"km/u"
-                                            ,anchor="n",fg='#163c76',bg='#EEEEEE',width=27, height=5, bd=1, font=('Arriel', '13'))
+                                            ,anchor="n",fg='#163c76',bg='#EEEEEE',width=27, height=5, bd=1, font=('normal', '13'))
         self.weather_label.grid(row=6, sticky=E)
 
 sf = ScreenFrame()
