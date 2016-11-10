@@ -8,25 +8,37 @@ class InputApp(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
         self.master = master
-        self.input_textbox = tk.Text(self, width=50, height=25)
-        self.submitB = tk.Button(self, text='Submit', command=self.submit)
-        self.input_textbox.grid(row=0,column=0)
-        self.submitB.grid(row=1, column=1)
+
+        #set configures voor de grid zodat deze intact blijft
+        self.columnconfigure(0, weight=3)
+        self.rowconfigure(0,weight=3)
+        self.rowconfigure(1,weight=3)
+
+        #maak textbox
+        self.input_textbox = tk.Text(self, width=50, height=15)
+        self.input_textbox.grid(row=0, sticky='WE')
+        #maak Button
+        self.submitB = tk.Button(self, text='Verstuur tweet', command=self.submit, bg='#0079D3', fg='white')
+        self.submitB.grid(row=1, sticky='WE')
         self.pack()
 
     def submit(self):
         text = self.input_textbox.get('1.0',tk.END)
-        #hij telt enters en alle andere tekens ook gewoon mee nog.
+        #zorg dat ingevoerde tweet minstens 4 tekens lang is
         if len(text) < 4:
             popMessage("Tweet moet minimaal 4 tekens lang zijn!.")
-        elif len(text) < 140:
+        #bericht mag niet langer zijn dan 140 charcters
+        elif len(text) <= 140:
+            #check of file bestaat
             if not file.is_file() :
                 tweetFile = open('tweet_que.txt', 'w')
             else:
                 tweetFile = open('tweet_que.txt', 'a')
             text = text + "||"
+            #schrijf de tweet naar het bestand
             tweetFile.write(text)
             tweetFile.close()
+            #verwijder de tweet uit het scherm zodat een volgende gebruiker een leeg scherm heeft
             self.input_textbox.delete('1.0', tk.END)
             self.update()
             popMessage("Tweet is verzonden en wacht op goedkeuring.")
@@ -37,6 +49,7 @@ if __name__ == '__main__':
     root = tk.Tk()
     InputApp(root).pack
     root.title('NS Tweetbot Input')
-    root.geometry('500x500')
+    root.geometry('500x300')
+    root.configure(bg='#FFC917')
     root.mainloop()
 
