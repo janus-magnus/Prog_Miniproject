@@ -51,9 +51,9 @@ class ScreenFrame():
             self.display_label.grid(row=tweet_counter,columnspan=2, sticky=W+E+N+S)
             tweet_counter += 1
 
-        #update het scherm elke 10minuten(tijd staat in miliseconden)
-        self.root.after(5000, self.delete_tweets) #delete eerst de tweets
-        self.root.after(5000, self.update_tweets) #zet dan de nieuwe tweets er weer in
+        #update het scherm elke 5minuten(tijd staat in miliseconden)
+        self.root.after(300000, self.delete_tweets) #delete eerst de tweets
+        self.root.after(300000, self.update_tweets) #zet dan de nieuwe tweets er weer in
 
     def delete_tweets(self):
         '''maakt het scherm leeg'''
