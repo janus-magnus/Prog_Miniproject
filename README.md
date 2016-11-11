@@ -15,7 +15,10 @@ Benodigdheden voor optimaal gebruik van deze applicatie:
 Een twitter account.
 PyCharm Edu 3.0(gratis download)
 
-Unzip de .rar file met een unzip applicatie naar keuze, en zet de stukken code in python interpreter(PyCharm). 
+Het project kan eventueel ook gevonden worden op github: https://github.com/janus-magnus/Prog_Miniproject
+
+
+Unzip de .rar file met een unzip applicatie naar keuze, en zet de stukken code in python interpreter(PyCharm).
 Ga naar de file van de functie die u wilt runnen en klik op run 'x' (op de plek waar nu x staat staat de naam van de file waar u in zit op dat moment).
 Run 'x' is het groene pijltje bovenaan naast regelnummer 1.
 
