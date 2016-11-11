@@ -8,12 +8,10 @@ class InputApp(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
         self.master = master
-
         #set configures voor de grid zodat deze intact blijft
         self.columnconfigure(0, weight=3)
         self.rowconfigure(0,weight=3)
         self.rowconfigure(1,weight=3)
-
         #maak textbox
         self.input_textbox = tk.Text(self, width=50, height=15)
         self.input_textbox.grid(row=0, sticky='WE')
@@ -23,6 +21,7 @@ class InputApp(tk.Frame):
         self.pack()
 
     def submit(self):
+        '''de ingevoerde text wordt wegeschreven naar tweet_que.txt en input_text box wordt leeg gemaakt'''
         text = self.input_textbox.get('1.0',tk.END)
         #zorg dat ingevoerde tweet minstens 4 tekens lang is
         if len(text) < 4:
