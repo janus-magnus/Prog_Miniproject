@@ -98,7 +98,7 @@ class ControlApp(tk.Frame):
 
 
     def update_que(self):
-        #update het que bestand
+        '''schrijft de veranderingen in de tweet que weg naar tweet_que.txt'''
         with open('tweet_que.txt','w') as twtq:
             for i in tweet_list:
                 if i != "":

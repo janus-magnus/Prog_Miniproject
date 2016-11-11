@@ -22,6 +22,8 @@ class ScreenFrame():
         self.root.mainloop()
 
     def update_tweets(self): #zet de laatste 5 tweets in het scherm
+        '''haalt de laats 5 tweets op en update labels er mee. als er voor een tijd geen nieuw tweets zijn
+        wordt er na er weergegevens wergegeven'''
         global last_tweet, show_weather
         #roep de API aan
         timeline = ap.get_latest_tweets()
@@ -54,18 +56,20 @@ class ScreenFrame():
         self.root.after(5000, self.update_tweets) #zet dan de nieuwe tweets er weer in
 
     def delete_tweets(self):
+        '''maakt het scherm leeg'''
         self.display_label.grid_remove()
         if show_weather == 1:
             self.weather_label.grid_remove()
 
-    def get_weather(self):#Zet het weer op het scherm
+    def get_weather(self):
+        '''haalt de weer informatie op en zet het in labels voor weergave'''
         weather_ob = ap.weather() #roep het weer API aan
 
        # dit zijn de functies die op de het weather_ob kan uitvoeren
-        wind = weather_ob.get_wind()  # Get wind degree and speed/ in een dict
-        humidity = weather_ob.get_humidity()  # Get humidity percentage
-        temp = weather_ob.get_temperature(unit='celsius') # Get degrees in Celsius
-        status = weather_ob.get_status() # Get weather status
+        wind = weather_ob.get_wind()  # haalt windgegevens op
+        humidity = weather_ob.get_humidity()  # haalt luchtvochtingheid op
+        temp = weather_ob.get_temperature(unit='celsius') # haalt de temp op
+        status = weather_ob.get_status() # haalt weer op e.g. rain, sun, cloudy
 
         #de tijd van laatste update omzetten naar gewenste notatie
         text_date = datetime.strftime(weather_ob.get_reference_time(timeformat='date'), "%a %e %b om %H:%M:%S")
